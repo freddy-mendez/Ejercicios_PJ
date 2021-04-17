@@ -15,7 +15,7 @@
             <sql:param value="${param.edad}" />
         </sql:update>
     </c:when>
-    <c:otherwise>
+    <c:when test="${action==2}">
         <sql:update dataSource="${db}" var="rs" >
             update personas set documento=?, nombre=?, edad=? where id=?;
             <sql:param value="${param.doc}" />
@@ -23,7 +23,7 @@
             <sql:param value="${param.edad}" />
             <sql:param value="${param.id}" />
         </sql:update>
-    </c:otherwise>
+    </c:when>
 </c:choose>
 
 <c:redirect url="index.jsp" />
