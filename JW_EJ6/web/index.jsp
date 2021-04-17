@@ -23,12 +23,15 @@
         
         <h1>Lista de Personas</h1>
         <br>
+        <a href="agregar.jsp">Agregar Persona</a>
+        <br><br>
         <table border="1">
             <thead>
                 <tr>
                     <th>Documento</th>
                     <th>Nombre</th>
                     <th>Edad</th>
+                    <th>Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +40,9 @@
                         <td><c:out value="${p.documento}" /></td>
                         <td><c:out value="${p.nombre}" /></td>
                         <td><c:out value="${p.edad}" /></td>
+                        <td><a href="editar.jsp?id=<c:out value="${p.id}" />">Editar</a><br>
+                            <a href="eliminar.jsp?id=<c:out value="${p.id}" />">Eliminar</a><br>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>
