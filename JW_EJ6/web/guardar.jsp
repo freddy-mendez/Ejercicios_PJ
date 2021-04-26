@@ -1,11 +1,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-                           user="pj_2021_1" password="pj_2021_1"
-                           url="jdbc:mysql://localhost/pj_2021_1?serverTimezone=UTC" />
 
-<c:set var="accion" value="${param.action}" />
+<%@include file="conexion.jsp" %>
+
+<c:set var="action" value="${param.action}" />
+
 <c:choose>
     <c:when test="${action==1}">
         <sql:update dataSource="${db}" var="rs" >

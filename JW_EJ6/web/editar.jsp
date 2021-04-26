@@ -1,9 +1,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-                   user="pj_2021_1" password="pj_2021_1"
-                   url="jdbc:mysql://localhost/pj_2021_1?serverTimezone=UTC" />
+
+<%@include file="conexion.jsp" %>
+
 <sql:query var="rs" dataSource="${db}">
     SELECT * FROM personas where id=?;
     <sql:param value="${param.id}" />

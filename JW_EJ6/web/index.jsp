@@ -7,6 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
+<%@include file="conexion.jsp" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,9 +17,11 @@
         <title>Gestion de Personas</title>
     </head>
     <body>
-        <sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-                           user="pj_2021_1" password="pj_2021_1"
-                           url="jdbc:mysql://localhost/pj_2021_1?serverTimezone=UTC" />
+        
+        <c:set var="numero" value="${Math.ceil(4.9)}" />
+   
+   <c:out value="${numero}" />
+        
         <sql:query var="rs" dataSource="${db}">
             SELECT * FROM personas;
         </sql:query>
