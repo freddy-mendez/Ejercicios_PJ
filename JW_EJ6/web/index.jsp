@@ -22,7 +22,7 @@
    
    <c:out value="${numero}" />
         
-        <sql:query var="rs" dataSource="${db}">
+        <sql:query var="rs" dataSource="${db}" >
             SELECT * FROM personas;
         </sql:query>
         
